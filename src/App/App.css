@@ -72,6 +72,8 @@
     margin: 0;
     border: 0;
     outline: 0;
+    line-height: normal;
+    letter-spacing: -0.333px;
   }
   html,
   body,

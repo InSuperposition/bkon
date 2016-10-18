@@ -12,6 +12,7 @@
   width: 47.5px;
   height: 47.5px;
   position: absolute;
+  /* for chrome */ z-index: 1;
   right: -23.25px;
   top: 47.5px;
 }
