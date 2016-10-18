@@ -1,6 +1,6 @@
 .container {
   color: #FFFFFF;
-  background-color: rgb(30,30,28);
+  background-color: rgb(40,40,37);
   min-width: 250px;
   position: relative;
 }
@@ -9,20 +9,20 @@
   line-height: normal;
   cursor: pointer;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 47.5px;
+  height: 47.5px;
   position: absolute;
-  right: -25px;
-  top: 50px;
+  right: -23.25px;
+  top: 47.5px;
 }
 
 .logo{
   width: 100%;
-  padding: 50px 50px 25px 25px;
+  padding: 40px 75px 25px 40px;
 }
 
 .group{
-  border-left: 5px rgb(21,135,206) solid;
+  border-left: 5px rgb(12,154,215) solid;
 }
 
 .section{
@@ -42,8 +42,9 @@
 
 .link{
   composes: section;
+  font-weight: 100;
   cursor: pointer;
   padding-left: 25px;
-  background-color: rgb(43,43,43);
+  background-color: rgb(55,55,55);
   border-left: 5px rgb(255,255,255) solid;
 }

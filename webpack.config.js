@@ -264,10 +264,10 @@ const getConfig = (env) => {
     postcss: () => [
       autoprefixer,
     ],
-    sassLoader: {
-      data: '@import "main.scss";',
-      includePaths: [path.resolve(__dirname, './src/assets/themes')],
-    },
+    // sassLoader: {
+    //   data: '@import "main.scss";',
+    //   includePaths: [path.resolve(__dirname, './src/assets/themes')],
+    // },
     svgo: {
       // https://github.com/svg/svgo
       plugins: [

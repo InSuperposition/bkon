@@ -19,11 +19,11 @@ const NavGroup = () => (
 const handleClick = (e) => (console.log(e));
 
 const Nav = () => (
-  <aside className={container} >
+  <div className={container} >
     <Logo className={logo} />
     <ArrowLeft className={toggle} onClick={handleClick} />
     <NavGroup />
-  </aside>
+  </div>
 );
 
 export default Nav;
