@@ -1,0 +1,13 @@
+.container {
+  width: 200px;
+}
+
+.container :global .Dropdown-control{
+  border: none;
+  padding-left: 20px;
+}
+
+.container :global .Dropdown-arrow{
+  right: auto;
+  left: 5px;
+}
