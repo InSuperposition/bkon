@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ICON-Install-Notes-Secondary" fill="#C3C0B4">
+            <g id="Group-2">
+                <g id="Group">
+                    <g id="Page-1">
+                        <polygon id="Fill-1" points="8 6 12.999 6 12.999 5 8 5"></polygon>
+                        <polygon id="Fill-2" points="8 4 12.999 4 12.999 3 8 3"></polygon>
+                        <path d="M0,16 L16,16 L16,0 L0,0 L0,16 Z M1,15 L15,15 L15,1 L1,1 L1,15 Z" id="Fill-3"></path>
+                        <polygon id="Fill-4" points="3 6 6 6 6 3 3 3"></polygon>
+                        <polygon id="Fill-5" points="8 10 12.999 10 12.999 9 8 9"></polygon>
+                        <polygon id="Fill-6" points="8 8 12.999 8 12.999 7 8 7"></polygon>
+                        <polygon id="Fill-7" points="3 10 6 10 6 7 3 7"></polygon>
+                        <polygon id="Fill-8" points="8 12 12.999 12 12.999 10.999 8 10.999"></polygon>
+                        <polygon id="Fill-9" points="8 14 11 14 11 13 8 13"></polygon>
+                        <polygon id="Fill-10" points="3 14 6 14 6 11 3 11"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

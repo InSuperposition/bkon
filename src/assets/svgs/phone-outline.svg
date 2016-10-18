@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="398px" height="333px" viewBox="0 0 398 333" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Phone-Preview-Outline-NORMAL" transform="translate(0.000000, -2.000000)" fill="#E6E5E0">
+            <g id="Group" transform="translate(0.000000, 2.000000)">
+                <path d="M159.269186,64.7794002 C159.269186,63.3830725 158.139608,62.2513715 156.745901,62.2513715 C155.352193,62.2513715 154.222615,63.3830725 154.222615,64.7794002 C154.222615,66.1757278 155.352193,67.3074288 156.745901,67.3074288 C158.139608,67.3074288 159.269186,66.1757278 159.269186,64.7794002" id="Combined-Shape"></path>
+                <rect id="Rectangle-2-Copy-3" x="0" y="60" width="2" height="37"></rect>
+                <rect id="Rectangle-2-Copy-4" x="0" y="151" width="2" height="37"></rect>
+                <rect id="Rectangle-2-Copy-5" x="0" y="194" width="2" height="37"></rect>
+                <rect id="Rectangle-2-Copy-5" x="396" y="151" width="2" height="37"></rect>
+                <path d="M171,64.5 L171,64.5 C171,65.3333906 171.670592,66 172.508249,66 L232.491751,66 C233.322376,66 234,65.3255729 234,64.5 C234,63.6666094 233.329408,63 232.491751,63 L172.508249,63 C171.677624,63 171,63.6744271 171,64.5 L171,64.5 Z" id="Rectangle-2-Copy-5"></path>
+                <g id="Page-1" transform="translate(1.000000, 0.000000)">
+                    <path d="M395.997475,331.996988 L394.586996,331.996988 L394.586996,37.4909889 C394.586996,17.5965452 378.391882,1.40975366 358.484389,1.40975366 L37.5102647,1.40975366 C17.6055924,1.40975366 1.41047848,17.5965452 1.41047848,37.4909889 L1.41047848,331.996988 L0,331.996988 L0,37.4909889 C0,16.8183612 16.8270082,0 37.5102647,0 L358.484389,0 C379.167646,0 395.997475,16.8183612 395.997475,37.4909889 L395.997475,331.996988 Z" id="Fill-1"></path>
+                    <polygon id="Fill-3" points="376.949495 333 375.538019 333 375.538019 109.739239 18.4544051 109.739239 18.4544051 333 17.0429293 333 17.0429293 108.325301 376.949495 108.325301"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

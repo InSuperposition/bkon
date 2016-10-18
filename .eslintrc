@@ -1,0 +1,30 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "mocha": true,
+    "browser": true
+  },
+  "globals": {
+    "__DEV__": false
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "import/no-extraneous-dependencies": 0,
+    "no-unused-vars": [2, {"args": "all", "argsIgnorePattern": "^_"}],
+    "comma-spacing":0,
+    "no-debugger":1,
+    // need to determine if we want to keep this
+    "no-underscore-dangle": 0,
+    "global-require":0,
+    "radix": ["error", "as-needed"],
+    "react/prefer-stateless-function": 1,
+    "react/jsx-filename-extension": 0,
+    // this needs to be non-error because of the win. build box
+    "linebreak-style": 0,
+    //
+    "class-methods-use-this": 0,
+    "react/forbid-prop-types": 0,
+    "arrow-parens": 0,
+    "jsx-a11y/anchor-has-content": 0
+  }
+}

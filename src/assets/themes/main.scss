@@ -1,0 +1,17 @@
+@import "~react-toolbox/lib/colors";
+
+$THEME-Blue: rgb(7, 78, 129);
+$THEME-Cyan: rgb(53, 191, 200);
+$THEME-Teal: rgb(93, 137, 164);
+$THEME-Purple: rgb(111, 48, 188);
+$THEME-Red: rgb(178, 23, 21);
+$THEME-Orange: rgb(192, 120, 29);
+$THEME-Gold: rgb(206, 164, 55);
+
+
+$color-primary: $THEME-Teal !default;
+$color-primary-dark: darken($color-primary, 10%) !default;
+$color-accent: lighten($THEME-Blue, 5%) !default;
+$color-accent-dark: darken($color-accent, 10%) !default;
+$color-primary-contrast: $color-dark-contrast !default;
+$color-accent-contrast: $color-dark-contrast !default;

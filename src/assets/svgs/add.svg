@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>icon Add new beacon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ICON-Add-new-Primary" fill="#E6E5E0">
+            <path d="M9.81818182,7.09090909 L7.09090909,7.09090909 L7.09090909,9.81818182 L4.90909091,9.81818182 L4.90909091,7.09090909 L2.18181818,7.09090909 L2.18181818,4.90909091 L4.90909091,4.90909091 L4.90909091,2.18181818 L7.09090909,2.18181818 L7.09090909,4.90909091 L9.81818182,4.90909091 L9.81818182,7.09090909 Z M6,0 C2.68472727,0 0,2.68690909 0,6 C0,9.31309091 2.68472727,12 6,12 C9.31309091,12 12,9.31309091 12,6 C12,2.68690909 9.31309091,0 6,0 L6,0 Z" id="icon-Add-new-beacon"></path>
+        </g>
+    </g>
+</svg>

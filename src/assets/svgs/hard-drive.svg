@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="17px" viewBox="0 0 14 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2" fill="#979797">
+            <path d="M7,4 C10.866,4 14,3.104 14,2 C14,0.896 10.866,0 7,0 C3.134,0 0,0.896 0,2 C0,3.104 3.134,4 7,4" id="Fill-1"></path>
+            <path d="M0,4 L0,6.398 C0,7.502 3.134,8.398 7,8.398 C10.866,8.398 14,7.502 14,6.398 L14,4 C12.001,5.344 7.629,5.398 7,5.398 C6.371,5.398 1.999,5.344 0,4" id="Fill-3"></path>
+            <path d="M0,8 L0,10.398 C0,11.502 3.134,12.398 7,12.398 C10.866,12.398 14,11.502 14,10.398 L14,8 C12.001,9.344 7.629,9.398 7,9.398 C6.371,9.398 1.999,9.344 0,8" id="Fill-5"></path>
+            <path d="M0,12 L0,14.398 C0,15.502 3.134,16.398 7,16.398 C10.866,16.398 14,15.502 14,14.398 L14,12 C12.001,13.344 7.629,13.398 7,13.398 C6.371,13.398 1.999,13.344 0,12" id="Fill-7"></path>
+        </g>
+    </g>
+</svg>
