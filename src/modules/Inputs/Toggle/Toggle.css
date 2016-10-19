@@ -1,0 +1,45 @@
+.container {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 10px;
+}
+
+.active .on{
+  color: rgb(0,171,223);
+}
+
+.active .button {
+  transform: translateX(5px);
+  transition: transform .5s;
+}
+
+.on{
+  margin-left: auto;
+}
+
+.off{
+  margin-right: auto;
+}
+
+.track {
+  width: 30px;
+  height: 10px;
+  border-radius: 50px;
+  border: 1px solid gray;
+}
+
+.button {
+  position:absolute;
+  z-index: 0;
+  transform: translateX(-5px);
+  transition: transform .5s;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  border: 1px solid gray;
+}
+
