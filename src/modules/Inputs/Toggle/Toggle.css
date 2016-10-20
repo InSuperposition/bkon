@@ -1,10 +1,10 @@
 .container {
-  width: 150px;
+  width: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 10px;
+  margin: 0 10px;
 }
 
 .active .on{
@@ -12,13 +12,14 @@
 }
 
 .active .button {
-  transform: translateX(5px);
+  transform: translateX(8px);
   transition: transform .5s;
 }
 
 .on{
   color: rgb(195,192,180);
   margin-left: auto;
+  margin-right: 8px;
 }
 
 .off{
@@ -27,22 +28,24 @@
 }
 
 .track {
-  width: 30px;
+  position:absolute;
+  z-index: 0;
+  width: 36px;
   height: 12.5px;
   border-radius: 50px;
-  border: 1px solid gray;
+  border: 1px solid rgb(195,192,180);
 }
 
 .button {
   position:absolute;
-  z-index: 0;
-  transform: translateX(-5px);
+  z-index: 1;
+  transform: translateX(-8px);
   transition: transform .5s;
   cursor: pointer;
   width: 20px;
   height: 20px;
   border-radius: 50px;
-  border: 1px solid gray;
+  border: 1px solid rgb(195,192,180);
   background-color: rgb(255,255,255);
 }
 
