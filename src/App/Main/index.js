@@ -14,7 +14,7 @@ const Main = () => (
     <Droplist />
     <TextInput />
     <BeaconList />
-    <Checkbox />
+    <Checkbox name={'test2'} />
 
   </main>
 );

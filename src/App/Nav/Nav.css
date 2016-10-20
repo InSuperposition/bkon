@@ -1,7 +1,7 @@
 .container {
   color: #FFFFFF;
   background-color: rgb(40,40,37);
-  min-width: 250px;
+  min-width: 270px;
   position: relative;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .group{
-  border-left: 5px rgb(12,154,215) solid;
+  border-left: 6px rgb(12,154,215) solid;
 }
 
 .section{
@@ -47,5 +47,5 @@
   cursor: pointer;
   padding-left: 25px;
   background-color: rgb(55,55,55);
-  border-left: 5px rgb(255,255,255) solid;
+  border-left: 7px rgb(255,255,255) solid;
 }

@@ -5,17 +5,31 @@ import Checkbox from '../../modules/Inputs/Checkbox';
 
 const Beacon = () => (
   <div className={container} >
-    <Checkbox />
+    <Checkbox name={'test'} />
     <Toggle isActive />
   </div>
 );
 
-const BeaconList = () => (
-  <ul className={list} >
-    <li className={item} >
-      <Beacon />
-    </li>
-  </ul>
-);
+class BeaconList extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      beaconList: {
+        beaconOne: {
+          isActive: true,
+        },
+      },
+    };
+  }
+  render() {
+    return (
+      <ul className={list} >
+        <li className={item} >
+          <Beacon />
+        </li>
+      </ul>
+    );
+  }
+}
 
 export default BeaconList;

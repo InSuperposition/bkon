@@ -17,10 +17,12 @@
 }
 
 .on{
+  color: rgb(195,192,180);
   margin-left: auto;
 }
 
 .off{
+  color: rgb(195,192,180);
   margin-right: auto;
 }
 

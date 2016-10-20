@@ -6,10 +6,10 @@ const Toggle = ({ isActive }) => {
   const containerState = isActive ? cn(container, active) : container;
   return (
     <div className={containerState} >
-      <span className={off} >Off</span>
+      <span className={off} >OFF</span>
       <div className={track} />
       <button className={button} type="text" placeholder="Search" />
-      <span className={on} >On</span>
+      <span className={on} >ON</span>
     </div>
   );
 };

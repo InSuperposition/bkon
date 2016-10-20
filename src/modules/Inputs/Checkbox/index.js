@@ -1,9 +1,9 @@
 import React from 'react';
-import { container } from './Checkbox.css';
+import { container, input } from './Checkbox.css';
 
 const Checkbox = ({ name }) => (
   <label htmlFor={name} className={container}>
-    <input type="checkbox" name={name} />
+    <input className={input} type="checkbox" name={name} />
   </label>
 );
 
