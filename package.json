@@ -56,6 +56,7 @@
     "fs": "^0.0.2",
     "html-webpack-plugin": "^2.22.0",
     "html-webpack-template": "^5.4.1",
+    "http-proxy-middleware": "^0.17.2",
     "ignore-styles": "^5.0.1",
     "isparta": "^4.0.0",
     "json-loader": "^0.5.4",
@@ -124,7 +125,8 @@
     "redux-actions": "^0.12.0",
     "redux-promise": "^0.6.0-alpha",
     "redux-thunk": "^2.1.0",
-    "reselect": "^2.5.4"
+    "reselect": "^2.5.4",
+    "superagent": "^2.3.0"
   },
   "repository": {
     "type": "git",

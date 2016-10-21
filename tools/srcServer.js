@@ -1,5 +1,6 @@
 import browserSync from 'browser-sync';
 import webpack from 'webpack';
+import proxy from 'http-proxy-middleware';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import historyApiFallback from 'connect-history-api-fallback';
@@ -8,12 +9,17 @@ import { Environments } from '../src/constants/StaticTypes';
 
 const webpackConfig = webpackConfigBuilder(Environments.DEV);
 const bundler = webpack(webpackConfig);
-
+const apiProxy = proxy('/api/v2/', {
+  target: 'https://pr-470_phy_bkon-connect.ci.bkon.com',
+  changeOrigin: true,
+  logLevel: 'debug',
+});
 // Run Browsersync and use middleware for Hot Module Replacement
 browserSync({
   server: {
     baseDir: 'src',
     middleware: [
+      apiProxy,
       historyApiFallback(),
       webpackDevMiddleware(bundler, {
         // Dev middleware can't access config, so we provide publicPath

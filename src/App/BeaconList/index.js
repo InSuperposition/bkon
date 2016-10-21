@@ -1,4 +1,5 @@
 import React from 'react';
+import request from 'superagent';
 import { container, list, item, title, content, details, url, battery } from './BeaconList.css';
 import Toggle from '../../modules/Inputs/Toggle';
 import Checkbox from '../../modules/Inputs/Checkbox';
@@ -20,12 +21,27 @@ class BeaconList extends React.Component {
   constructor() {
     super();
     this.state = {
+      // NOTE: Storing here for demonstration purposes only.
+      token: null,
+      email: '',
+      password: '',
       beaconList: {
         beaconOne: {
           isActive: true,
         },
       },
     };
+  }
+  componentDidMount() {
+    request
+      .post('api/v2/login')
+      .send({ email: 'testing.demo@phy.net', password: 'testing.demo' })
+      .set('Content-Type', 'application/json')
+      .set('Accept', 'application/json')
+      .end((err, res) => {
+        // Calling the end function will send the request
+        console.log(err, res);
+      });
   }
   render() {
     return (

@@ -25,10 +25,11 @@
 .battery{
   position: absolute;
   right: 10px;
-  /*margin-right: 5px;
-  margin-left: auto;
-  margin-bottom: auto;
-  align-self: flex-start;*/
+}
+
+.url{
+  flex: 1;
+  word-break: break-word;
 }
 
 .list {
