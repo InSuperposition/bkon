@@ -1,5 +1,5 @@
 import React from 'react';
-import request from 'superagent';
+import 'whatwg-fetch';
 import { container, list, item, title, content, details, url, battery } from './BeaconList.css';
 import Toggle from '../../modules/Inputs/Toggle';
 import Checkbox from '../../modules/Inputs/Checkbox';
@@ -21,27 +21,49 @@ class BeaconList extends React.Component {
   constructor() {
     super();
     this.state = {
-      // NOTE: Storing here for demonstration purposes only.
+      // NOTE: Storing authentication data here for demonstration purposes only.
       token: null,
-      email: '',
-      password: '',
-      beaconList: {
-        beaconOne: {
-          isActive: true,
-        },
-      },
+      email: 'testing.demo@phy.net',
+      password: 'testing.demo',
+      beacons: null,
     };
   }
   componentDidMount() {
-    request
-      .post('api/v2/login')
-      .send({ email: 'testing.demo@phy.net', password: 'testing.demo' })
-      .set('Content-Type', 'application/json')
-      .set('Accept', 'application/json')
-      .end((err, res) => {
-        // Calling the end function will send the request
-        console.log(err, res);
+    const { email, password } = this.state;
+
+    const checkStatus = (response) => {
+      if (response.status >= 200 && response.status < 300) {
+        return response;
+      }
+      const error = new Error(response.statusText);
+      error.response = response;
+      throw error;
+    };
+
+    const parseJSON = (response) => response.json();
+
+    fetch('api/v2/login', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    })
+    .then(checkStatus)
+    .then(parseJSON)
+    .then(({ body }) => {
+      this.setState({
+        token: body,
       });
+    })
+    .catch((error) => {
+      // FIXME: handle error
+      console.log('request failed', error);
+    });
   }
   render() {
     return (
