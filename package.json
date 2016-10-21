@@ -9,7 +9,7 @@
     "lint": "eslint --color --format=node_modules/eslint-formatter-pretty .",
     "open:src": "webpack-dashboard -- babel-node tools/srcServer.js --presets es2015",
     "prebuild": "npm-run-all clean lint",
-    "build": "npm-run-all test:build build-src",
+    "build": "npm-run-all build-src",
     "postbuild": "babel-node tools/copyArtifacts.js --presets es2015",
     "build-src": "babel-node tools/build.js --presets es2015",
     "clean": "npm run clean-dist",
