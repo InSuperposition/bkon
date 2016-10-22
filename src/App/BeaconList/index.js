@@ -1,8 +1,10 @@
 import React from 'react';
-import 'whatwg-fetch';
+import { getJson } from '../../modules/callApi';
 import { container, list, item, title, content, details, url, battery } from './BeaconList.css';
 import Toggle from '../../modules/Inputs/Toggle';
 import Checkbox from '../../modules/Inputs/Checkbox';
+import Droplist from '../../modules/Inputs/Droplist';
+import TextInput from '../../modules/Inputs/TextInput';
 
 const Beacon = () => (
   <div className={container} >
@@ -18,62 +20,48 @@ const Beacon = () => (
 );
 
 class BeaconList extends React.Component {
+
   constructor() {
     super();
     this.state = {
-      // NOTE: Storing authentication data here for demonstration purposes only.
-      token: null,
-      email: 'testing.demo@phy.net',
-      password: 'testing.demo',
       beacons: null,
     };
   }
+
   componentDidMount() {
-    const { email, password } = this.state;
-
-    const checkStatus = (response) => {
-      if (response.status >= 200 && response.status < 300) {
-        return response;
-      }
-      const error = new Error(response.statusText);
-      error.response = response;
-      throw error;
-    };
-
-    const parseJSON = (response) => response.json();
-
-    fetch('api/v2/login', {
-      method: 'POST',
+    const { token } = this.props;
+    getJson('api/v2/beacons',{
+      method: 'GET',
       headers: {
+        Authorization: `BEARER ${token}`,
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    })
-    .then(checkStatus)
-    .then(parseJSON)
-    .then(({ body }) => {
+    },(response) => {
       this.setState({
-        token: body,
+        beacons: response,
       });
-    })
-    .catch((error) => {
-      // FIXME: handle error
-      console.log('request failed', error);
     });
   }
+
   render() {
     return (
-      <ul className={list} >
-        <li className={item} >
-          <Beacon />
-        </li>
-      </ul>
+      <div>
+        <h2>myPhyIDs</h2>
+        <Droplist />
+        <TextInput />
+        <ul className={list} >
+          <li className={item} >
+            <Beacon />
+          </li>
+        </ul>
+      </div>
     );
   }
 }
+
+BeaconList.propTypes = {
+  token: React.PropTypes.string,
+};
 
 export default BeaconList;

@@ -1,22 +1,48 @@
 import React from 'react';
+import { getJson } from '../../modules/callApi';
 import { container } from './Main.css';
 import Options from '../Options';
 import BeaconList from '../BeaconList';
-import Droplist from '../../modules/Inputs/Droplist';
-import Checkbox from '../../modules/Inputs/Checkbox';
-import TextInput from '../../modules/Inputs/TextInput';
 
+class Main extends React.Component {
+  // NOTE: Storing authentication data, behaviors in Main component
+  // for demonstration purposes only.
+  constructor() {
+    super();
+    this.state = {
+      token: null,
+      email: 'testing.demo@phy.net',
+      password: 'testing.demo',
+    };
+  }
 
-const Main = () => (
-  <main className={container} >
-    <Options />
-    <h2>myPhyIDs</h2>
-    <Droplist />
-    <TextInput />
-    <BeaconList />
-    <Checkbox name={'test2'} />
+  componentDidMount() {
+    const { email, password } = this.state;
 
-  </main>
-);
+    getJson('api/v2/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    }, (response) => {
+      console.log(response, this);
+      this.setState({
+        token: response,
+      });
+    });
+  }
+
+  render() {
+    const { token } = this.state;
+    return (
+      <main className={container} >
+        <Options />
+        {/* Mocking authentication */}
+        { token && <BeaconList token={token} /> }
+      </main>
+    );
+  }
+}
 
 export default Main;
