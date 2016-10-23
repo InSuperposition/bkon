@@ -2,7 +2,7 @@ import React from 'react';
 import { normalize, Schema, arrayOf } from 'normalizr';
 import sortBy from 'lodash.sortby';
 import { getJson } from '../../modules/callApi';
-import { list, item } from './BeaconList.css';
+import { header, list, item } from './BeaconList.css';
 import Beacon from '../Beacon';
 import Droplist from '../../modules/Inputs/Droplist';
 import TextInput from '../../modules/Inputs/TextInput';
@@ -66,15 +66,20 @@ class BeaconList extends React.Component {
   }
 
   paginate = (forward = true) => {
-    const { pageIndex, pageSize, beaconEntities: { entities: { beacons } } } = this.state;
+    const {
+      pageIndex,
+      pageSize,
+      beaconEntities: { result },
+    } = this.state;
     if (forward) {
-        // prevent out of bounds error
-      if (pageIndex < beacons.length - pageSize) {
+      // prevent out of bounds error
+      console.log(pageIndex + pageSize, result.length - 1);
+      if (pageIndex + pageSize < result.length - 1) {
         this.setState({
           pageIndex: pageIndex + pageSize,
         });
       }
-    } else {
+    } else if (pageIndex - pageSize >= 0) {
       this.setState({
         pageIndex: pageIndex - pageSize,
       });
@@ -113,9 +118,11 @@ class BeaconList extends React.Component {
 
     return (
       <div>
-        <h2>My phyIDs</h2>
-        <Droplist options={options} value={value} onChange={this.handleChange} />
-        <TextInput />
+        <header className={header}>
+          <h2>My phyIDs</h2>
+          <Droplist options={options} value={value} onChange={this.handleChange} />
+          <TextInput />
+        </header>
         <ul className={list} >{
           beacons.map((beacon) => (
             <li key={beacon._id} className={item} >
