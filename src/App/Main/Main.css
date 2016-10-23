@@ -1,4 +1,11 @@
 .container {
   flex: 0 0 calc(100% - 270px);
+  z-index: 0;
   overflow-x: scroll;
+}
+
+@media (max-width: 640px) {
+  .container {
+    flex: 0 0 100%;
+  }
 }

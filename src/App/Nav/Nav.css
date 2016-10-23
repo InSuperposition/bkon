@@ -1,9 +1,39 @@
 .container {
+  position: relative;
+}
+
+.active {
+  height: 100%;
+}
+
+@media (max-width: 640px) {
+  .container {
+    position: fixed;
+    width: 270px;
+    height: 100%;
+    z-index: 1;
+    transition: translateX(-270px);
+  }
+}
+
+.panel {
   color: #FFFFFF;
   background-color: rgb(40,40,37);
   min-width: 270px;
-  position: relative;
+  height: 100%;
 }
+
+@media (max-width: 640px) {
+  .panel {
+    transform: translateX(-270px);
+    transition: all 0.25s;
+  }
+  .active .panel {
+    transform: translateX(0px);
+    transition: all 0.25s;
+  }
+}
+
 
 .toggle{
   line-height: normal;
@@ -15,7 +45,21 @@
   /* for chrome */ z-index: 1;
   right: -23.25px;
   top: 47.5px;
+  transform-origin: center;
 }
+
+@media (max-width: 640px) {
+  .toggle{
+    transform: rotate(180deg) translate(225px, 46px);
+    transition: all 0.25s;
+  }
+  .active .toggle{
+    transform: translateX(0px);
+    transition: all 0.25s;
+  }
+}
+
+
 
 .logo{
   width: 100%;

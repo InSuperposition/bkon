@@ -13,11 +13,13 @@ class BeaconList extends React.Component {
   constructor() {
     super();
     this.state = {
-      sort: 'default',
+      // beacon state
       beaconEntities: {
         result: [],
         entities: {},
       },
+      // sort state
+      sort: 'default',
       options: [
         { value: 'default', label: 'Sort:' },
         { value: 'redirectUrl', label: 'Redirect URL' },
@@ -26,6 +28,7 @@ class BeaconList extends React.Component {
         { value: 'batteryLevel', label: 'Battery Level' },
       ],
       defaultOption: 0,
+      // pagination state
       pageSize: 8,
       pageIndex: 0,
     };
@@ -62,8 +65,20 @@ class BeaconList extends React.Component {
 
   }
 
-  paginate = () => {
-
+  paginate = (forward = true) => {
+    const { pageIndex, pageSize, beaconEntities: { entities: { beacons } } } = this.state;
+    if (forward) {
+        // prevent out of bounds error
+      if (pageIndex < beacons.length - pageSize) {
+        this.setState({
+          pageIndex: pageIndex + pageSize,
+        });
+      }
+    } else {
+      this.setState({
+        pageIndex: pageIndex - pageSize,
+      });
+    }
   }
 
   handleChange = (option) => {
@@ -76,7 +91,7 @@ class BeaconList extends React.Component {
     const { sort } = this.state;
     return sortBy(beacons, [function sortCallback(o) {
       if (sort === 'default') {
-        // no-op
+        // returns intital order
         return o;
       }
       return o[sort];

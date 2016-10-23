@@ -1,5 +1,6 @@
 import React from 'react';
-import { container, toggle, logo, group, link, header, icon } from './Nav.css';
+import cn from 'classnames';
+import { container, active, panel, toggle, logo, group, link, header, icon } from './Nav.css';
 import Logo from '../../assets/svgs/logo-phynet.svg';
 import ArrowLeft from '../../assets/svgs/arrow-left.svg';
 import Beacons from '../../assets/svgs/beacons.svg';
@@ -16,15 +17,33 @@ const NavGroup = () => (
   </nav>
 );
 
-// TODO: Animate
-const handleClick = (e) => (console.log(e));
+class Nav extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isActive: true,
+    };
+  }
 
-const Nav = () => (
-  <div className={container} >
-    <Logo className={logo} />
-    <ArrowLeft className={toggle} onClick={handleClick} />
-    <NavGroup />
-  </div>
-);
+  toggle = () => {
+    const { isActive } = this.state;
+    this.setState({
+      isActive: !isActive,
+    });
+  }
+
+  render() {
+    const { isActive } = this.state;
+    return (
+      <div className={isActive ? cn(container, active) : container} >
+        <ArrowLeft className={toggle} onClick={this.toggle} />
+        <div className={panel}>
+          <Logo className={logo} />
+          <NavGroup />
+        </div>
+      </div>
+    );
+  }
+}
 
 export default Nav;
