@@ -10,8 +10,8 @@ const DropList = ({ options, value, onChange }) =>
 
 DropList.propTypes = {
   onChange: React.PropTypes.func,
-  options: React.PropTypes.object,
-  value: React.PropTypes.string,
+  options: React.PropTypes.array,
+  value: React.PropTypes.object,
 };
 
 export default DropList;

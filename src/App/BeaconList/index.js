@@ -26,6 +26,8 @@ class BeaconList extends React.Component {
         { value: 'batteryLevel', label: 'Battery Level' },
       ],
       defaultOption: 0,
+      pageSize: 8,
+      pageIndex: 0,
     };
   }
 
@@ -72,7 +74,7 @@ class BeaconList extends React.Component {
 
   sort = (beacons) => {
     const { sort } = this.state;
-    return sortBy(beacons, [function (o) {
+    return sortBy(beacons, [function sortCallback(o) {
       if (sort === 'default') {
         // no-op
         return o;
@@ -82,9 +84,17 @@ class BeaconList extends React.Component {
   }
 
   render() {
-    const { options, defaultOption , beaconEntities: { entities } } = this.state;
+    const {
+      pageSize, pageIndex,
+      options, defaultOption,
+      beaconEntities: { entities },
+    } = this.state;
     const value = options[defaultOption];
-    const beacons = this.sort(entities.beacons);
+    // sort
+    const sortedBeacons = this.sort(entities.beacons);
+    // paginate
+    const last = pageIndex + pageSize;
+    const beacons = sortedBeacons.slice(pageIndex, last);
 
     return (
       <div>

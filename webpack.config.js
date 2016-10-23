@@ -22,7 +22,7 @@ const cssModulePaths = [
 
 const VERBOSE = false;
 const getPlugins = (env) => {
-  console.log('NODE_ENV', env);
+  // console.log('NODE_ENV', env);
   const GLOBALS = {
     'process.env.NODE_ENV': JSON.stringify(env),
     __DEV__: env === Environments.DEV,
