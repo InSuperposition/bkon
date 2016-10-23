@@ -21,7 +21,7 @@ class Nav extends React.Component {
   constructor() {
     super();
     this.state = {
-      isActive: true,
+      isActive: false,
     };
   }
 
