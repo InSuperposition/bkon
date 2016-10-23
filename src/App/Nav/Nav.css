@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.active {
+.container.active {
   height: 100%;
 }
 
@@ -12,7 +12,13 @@
     width: 270px;
     height: 100%;
     z-index: 1;
-    transition: translateX(-270px);
+    transform: translateX(-270px);
+    transition: all 0.25s;
+  }
+
+  .container.active {
+    transform: translateX(0px);
+    transition: all 0.25s;
   }
 }
 
@@ -22,18 +28,6 @@
   min-width: 270px;
   height: 100%;
 }
-
-@media (max-width: 640px) {
-  .panel {
-    transform: translateX(-270px);
-    transition: all 0.25s;
-  }
-  .active .panel {
-    transform: translateX(0px);
-    transition: all 0.25s;
-  }
-}
-
 
 .toggle{
   line-height: normal;
@@ -50,7 +44,7 @@
 
 @media (max-width: 640px) {
   .toggle{
-    transform: rotate(180deg) translate(225px, 46px);
+    transform: rotate(180deg) translate(-45px, 46px);
     transition: all 0.25s;
   }
   .active .toggle{
