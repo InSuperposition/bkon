@@ -236,7 +236,7 @@ const getConfig = (env) => {
     debug: true,
     // more info:https://webpack.github.io/docs/build-performance.html#sourcemaps
     // and https://webpack.github.io/docs/configuration.html#devtool
-    devtool: env === Environments.PROD ? 'source-map' : 'cheap-module-eval-source-map',
+    devtool: env === Environments.PROD ? 'source-map' : 'eval-source-map',
     // set to false to see a list of every file being bundled.
     // noInfo: false,
     entry: {

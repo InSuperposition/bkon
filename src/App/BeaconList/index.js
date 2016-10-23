@@ -1,16 +1,31 @@
 import React from 'react';
+import { normalize, Schema, arrayOf } from 'normalizr';
+import sortBy from 'lodash.sortby';
 import { getJson } from '../../modules/callApi';
 import { list, item } from './BeaconList.css';
 import Beacon from '../Beacon';
 import Droplist from '../../modules/Inputs/Droplist';
 import TextInput from '../../modules/Inputs/TextInput';
 
+// BeaconList would be a container ( connected component ) if using Redux
 class BeaconList extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      beacons: [],
+      sort: 'default',
+      beaconEntities: {
+        result: [],
+        entities: {},
+      },
+      options: [
+        { value: 'default', label: 'Sort:' },
+        { value: 'redirectUrl', label: 'Redirect URL' },
+        { value: '_id', label: 'Id' },
+        { value: 'name', label: 'Name' },
+        { value: 'batteryLevel', label: 'Battery Level' },
+      ],
+      defaultOption: 0,
     };
   }
 
@@ -24,33 +39,62 @@ class BeaconList extends React.Component {
         'Content-Type': 'application/json',
       },
     },(response) => {
+      // FIXME: normalizing the data here is a quick and dirty approach
+      // Using Immutable data structures can give some advantages here.
+      const beaconSchema = new Schema('beacons', {
+        idAttribute: '_id',
+        defaults: { isSelected: false },
+      });
+      const beaconEntities = normalize(response, arrayOf(beaconSchema));
       this.setState({
-        beacons: response,
+        beaconEntities,
       });
     });
   }
 
+  handleToggle = () => {
+
+  }
+
+  handleSelect = () => {
+
+  }
+
+  paginate = () => {
+
+  }
+
+  handleChange = (option) => {
+    this.setState({
+      sort: option.value,
+    });
+  }
+
+  sort = (beacons) => {
+    const { sort } = this.state;
+    return sortBy(beacons, [function (o) {
+      if (sort === 'default') {
+        // no-op
+        return o;
+      }
+      return o[sort];
+    }]);
+  }
 
   render() {
-    const { beacons } = this.state;
-    const options = [
-      { value: ' ', label: 'Sort:' },
-      { value: 'redirectUrl', label: 'Redirect URL' },
-      { value: '_id', label: 'Id' },
-      { value: 'name', label: 'Name' },
-      { value: 'batteryLevel', label: 'Battery Level' },
-    ];
-    const value = options[0];
+    const { options, defaultOption , beaconEntities: { entities } } = this.state;
+    const value = options[defaultOption];
+    const beacons = this.sort(entities.beacons);
 
     return (
       <div>
         <h2>My phyIDs</h2>
-        <Droplist options={options} value={value} />
+        <Droplist options={options} value={value} onChange={this.handleChange} />
         <TextInput />
         <ul className={list} >{
           beacons.map((beacon) => (
             <li key={beacon._id} className={item} >
-              <Beacon {...beacon} />
+              <Beacon {...beacon} onSelect={this.handleSelect} onToggle={this.handleToggle} />
             </li>
           ))
         }</ul>

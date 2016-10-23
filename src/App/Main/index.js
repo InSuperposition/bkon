@@ -26,7 +26,7 @@ class Main extends React.Component {
         password,
       }),
     }, (response) => {
-      console.log(response, this);
+      // console.log(response, this);
       this.setState({
         token: response,
       });
