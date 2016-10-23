@@ -1,30 +1,16 @@
 import React from 'react';
 import { getJson } from '../../modules/callApi';
-import { container, list, item, title, content, details, url, battery } from './BeaconList.css';
-import Toggle from '../../modules/Inputs/Toggle';
-import Checkbox from '../../modules/Inputs/Checkbox';
+import { list, item } from './BeaconList.css';
+import Beacon from '../Beacon';
 import Droplist from '../../modules/Inputs/Droplist';
 import TextInput from '../../modules/Inputs/TextInput';
-
-const Beacon = () => (
-  <div className={container} >
-    <Checkbox name={'test'} />
-    <Toggle isActive />
-    <h2 className={title}>pHy1d</h2>
-    <div className={content}>
-      <span className={details}>Device Alias Here</span>
-      <span className={url}>https://destination.com/abcdefghijklmn1234567890</span>
-    </div>
-    <div className={battery}>Icon</div>
-  </div>
-);
 
 class BeaconList extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      beacons: null,
+      beacons: [],
     };
   }
 
@@ -44,17 +30,30 @@ class BeaconList extends React.Component {
     });
   }
 
+
   render() {
+    const { beacons } = this.state;
+    const options = [
+      { value: ' ', label: 'Sort:' },
+      { value: 'redirectUrl', label: 'Redirect URL' },
+      { value: '_id', label: 'Id' },
+      { value: 'name', label: 'Name' },
+      { value: 'batteryLevel', label: 'Battery Level' },
+    ];
+    const value = options[0];
+
     return (
       <div>
-        <h2>myPhyIDs</h2>
-        <Droplist />
+        <h2>My phyIDs</h2>
+        <Droplist options={options} value={value} />
         <TextInput />
-        <ul className={list} >
-          <li className={item} >
-            <Beacon />
-          </li>
-        </ul>
+        <ul className={list} >{
+          beacons.map((beacon) => (
+            <li key={beacon._id} className={item} >
+              <Beacon {...beacon} />
+            </li>
+          ))
+        }</ul>
       </div>
     );
   }

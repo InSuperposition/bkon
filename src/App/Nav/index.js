@@ -16,6 +16,7 @@ const NavGroup = () => (
   </nav>
 );
 
+// TODO: Animate
 const handleClick = (e) => (console.log(e));
 
 const Nav = () => (
