@@ -12,23 +12,23 @@ const groupList = [
     items: [
       {
         id: 'Destinations',
-        iconName: 'select',
+        iconName: 'hover',
       },
       {
         id: 'phyID',
-        iconName: 'select',
+        iconName: 'hover',
       },
       {
         id: 'Campaign',
-        iconName: 'select',
+        iconName: 'connect',
       },
       {
         id: 'Security',
-        iconName: 'sheild',
+        iconName: 'shield',
       },
       {
         id: 'Install Notes',
-        iconName: 'select',
+        iconName: 'news',
       },
       {
         id: 'Events',
@@ -36,14 +36,14 @@ const groupList = [
       },
       {
         id: 'Metrics',
-        iconName: 'select',
+        iconName: 'graph',
       },
     ],
   },
   // Second Group
   {
     id: 'Add Button',
-    iconName: 'plus',
+    iconName: 'add',
   },
   // Third Group
   {
@@ -52,78 +52,89 @@ const groupList = [
     items: [
       {
         id: 'Destinations',
-        iconName: 'select',
+        iconName: 'hover',
       },
       {
         id: 'Labels',
-        iconName: 'select',
+        iconName: 'label',
       },
       {
         id: 'Media',
-        iconName: 'select',
+        iconName: 'image',
       },
     ],
   },
   // Fourth Group
   {
     id: 'Metrics',
-    iconName: 'grid',
+    iconName: 'graph',
     items: [
       {
         id: 'Logs',
-        iconName: 'select',
+        iconName: 'hard-drive',
       },
     ],
   },
   // Fifth Group
   {
     id: 'Help',
-    iconName: 'grid',
+    iconName: 'chat',
   },
   // Sixth Group
   {
     id: 'App: Home Depot',
-    iconName: 'grid',
+    iconName: 'phone',
     items: [
       {
         id: 'Destinations',
-        iconName: 'select',
+        iconName: 'hover',
       },
       {
         id: 'Campaign',
-        iconName: 'select',
+        iconName: 'connect',
       },
       {
         id: 'Security',
-        iconName: 'sheild',
+        iconName: 'shield',
       },
       {
         id: 'Install Notes',
-        iconName: 'select',
+        iconName: 'news',
       },
     ],
   },
 ];
 
-const Link = ({ id, iconName }) => (
-  <a className={link} >
-    <img src={`../../assets/svgs/${iconName}.svg`} className={icon} role="presentation" />
-    {id}
-  </a>
-);
+const Link = ({ id, iconName, isActive }) => {
+  const linkState = isActive ? cn(active, link) : link;
+  return (
+    <a className={linkState} >
+      <img src={`../../assets/svgs/${iconName}.svg`} className={icon} role="presentation" />
+      {id}
+    </a>
+  );
+};
 
 Link.propTypes = {
   id: React.PropTypes.string,
   iconName: React.PropTypes.string,
-  // items: React.PropTypes.array,
+  isActive: React.PropTypes.bool,
 };
 
-const NavGroup = ({ id, iconName, items = [] }) => (
-  <nav className={group}>
-    <h3 className={header}><img src={`../../assets/svgs/${iconName}.svg`} className={icon} role="presentation" />{id}</h3>
-    { items.map(item => <Link key={item.id} {...item} />) }
-  </nav>
-);
+const NavGroup = ({ id, iconName, items = [] }) => {
+  // Mock route state
+  const activeGroup = 'Beacons';
+  const activeLink = 'Destinations';
+  const groupState = id === activeGroup ? cn(active, group) : group;
+  return (
+    <nav className={groupState}>
+      <h3 className={header}><img src={`../../assets/svgs/${iconName}.svg`} className={icon} role="presentation" />{id}</h3>
+      { items.map(item =>
+        <Link key={item.id} {...item} isActive={(id === activeGroup) && (item.id === activeLink)} />
+      )}
+    </nav>
+  );
+};
 
 NavGroup.propTypes = {
   id: React.PropTypes.string,

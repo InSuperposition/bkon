@@ -61,9 +61,16 @@
   padding: 40px 75px 25px 40px;
 }
 
-.group{
+.active.group{
   border-left: 6px rgb(12,154,215) solid;
+  padding-left: 0px;
 }
+
+.group{
+  border-left: none;
+  padding-left: 6px;
+}
+
 
 .section{
   padding: 10px 15px;
@@ -80,11 +87,16 @@
   composes: section;
 }
 
+.active.link{
+  padding-left: 18px;
+  border-left: 7px rgb(255,255,255) solid;
+  background-color: rgb(55,55,55);
+}
+
 .link{
   composes: section;
   font-weight: 100;
   cursor: pointer;
   padding-left: 25px;
-  background-color: rgb(55,55,55);
-  border-left: 7px rgb(255,255,255) solid;
+  border-left: none;
 }
