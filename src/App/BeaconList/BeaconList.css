@@ -1,6 +1,36 @@
 .header {
-  margin: 10px;
+  margin: 10px 20px;
+  display: flex;
+  flex-direction: column;
 }
+
+.title{
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.search{
+  /*width: 200px;
+  margin-left: auto;*/
+}
+
+.inputs{
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs > *{
+  margin: 10px 0;
+}
+
+@media (min-width: 641px) {
+  .inputs {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .list {
 
 }

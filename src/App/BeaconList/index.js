@@ -2,10 +2,11 @@ import React from 'react';
 import { normalize, Schema, arrayOf } from 'normalizr';
 import sortBy from 'lodash.sortby';
 import { getJson } from '../../modules/callApi';
-import { header, list, item } from './BeaconList.css';
+import { header, search, title, inputs, list, item } from './BeaconList.css';
 import Beacon from '../Beacon';
 import Droplist from '../../modules/Inputs/Droplist';
 import TextInput from '../../modules/Inputs/TextInput';
+import Checkbox from '../../modules/Inputs/Checkbox';
 
 // BeaconList would be a container ( connected component ) if using Redux
 class BeaconList extends React.Component {
@@ -73,7 +74,6 @@ class BeaconList extends React.Component {
     } = this.state;
     if (forward) {
       // prevent out of bounds error
-      console.log(pageIndex + pageSize, result.length - 1);
       if (pageIndex + pageSize < result.length - 1) {
         this.setState({
           pageIndex: pageIndex + pageSize,
@@ -119,9 +119,12 @@ class BeaconList extends React.Component {
     return (
       <div>
         <header className={header}>
-          <h2>My phyIDs</h2>
-          <Droplist options={options} value={value} onChange={this.handleChange} />
-          <TextInput />
+          <h2 className={title} >My phyIDs</h2>
+          <TextInput className={search} />
+          <div className={inputs}>
+            <Droplist options={options} value={value} onChange={this.handleChange} />
+            <Checkbox />
+          </div>
         </header>
         <ul className={list} >{
           beacons.map((beacon) => (
