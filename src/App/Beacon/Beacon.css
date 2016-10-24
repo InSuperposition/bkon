@@ -7,19 +7,23 @@
   padding: 20px 0px;
 }
 
+.controls{
+  display: flex;
+  flex: 1;
+  margin-bottom: 20px;
+}
+
 .title{
   color: rgb(0,171,223);
-  margin-bottom: 20px;
-  min-width: 90px;
 }
 
 .content{
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 0 1 100%;
 }
 
-@media (min-width: 641px) {
+@media (min-width: 820px) {
   .content{
     flex: 0 1 50%;
     margin-left: auto;

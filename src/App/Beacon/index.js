@@ -1,13 +1,15 @@
 import React from 'react';
-import { container, title, content, details, url, battery } from './Beacon.css';
+import { container, controls, title, content, details, url, battery } from './Beacon.css';
 import Toggle from '../../modules/Inputs/Toggle';
 import Checkbox from '../../modules/Inputs/Checkbox';
 
 const Beacon = ({ disabled, name, redirectUrl, _id, batteryLevel, onSelect, onToggle }) => (
   <div className={container} >
-    <Checkbox name={'test'} onClick={onSelect} />
-    <Toggle isActive={!disabled} onClick={onToggle} />
-    <h2 className={title}>{_id}</h2>
+    <div className={controls} >
+      <Checkbox name={'test'} onClick={onSelect} />
+      <Toggle isActive={!disabled} onClick={onToggle} />
+      <h2 className={title}>{_id}</h2>
+    </div>
     <div className={content}>
       <span className={details}>{name}</span>
       <span className={url}>{redirectUrl}</span>
