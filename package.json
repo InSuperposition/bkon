@@ -97,6 +97,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "lodash.kebabcase": "^4.0.1",
     "lodash.merge": "^4.6.0",
     "lodash.sortby": "^4.7.0",
     "lodash.take": "^4.1.1",

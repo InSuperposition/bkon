@@ -27,6 +27,7 @@
   background-color: rgb(40,40,37);
   min-width: 270px;
   height: 100%;
+  overflow-x: scroll;
 }
 
 .toggle{

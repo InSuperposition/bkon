@@ -1,3 +1,6 @@
+.container{
+  margin: 0 20px;
+}
 .header {
   margin: 10px 20px;
   display: flex;
@@ -10,8 +13,14 @@
 }
 
 .search{
-  /*width: 200px;
-  margin-left: auto;*/
+
+}
+
+@media (min-width: 641px) {
+  .search {
+    width: 200px;
+    margin-left: auto;
+  }
 }
 
 .inputs{
@@ -27,14 +36,21 @@
   .inputs {
     flex-direction: row-reverse;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+  }
+
+  .inputs > *{
+    margin-right: 10px;
   }
 }
 
 .list {
+  border-top: 1px solid rgb(195,192,180);
 
 }
 
 .item {
-
+  display: block;
+  list-style: none;
+  border-bottom: 1px solid rgb(195,192,180);
 }

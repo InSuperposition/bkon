@@ -2,7 +2,7 @@ import React from 'react';
 import { normalize, Schema, arrayOf } from 'normalizr';
 import sortBy from 'lodash.sortby';
 import { getJson } from '../../modules/callApi';
-import { header, search, title, inputs, list, item } from './BeaconList.css';
+import { container, header, search, title, inputs, list, item } from './BeaconList.css';
 import Beacon from '../Beacon';
 import Droplist from '../../modules/Inputs/Droplist';
 import TextInput from '../../modules/Inputs/TextInput';
@@ -117,7 +117,7 @@ class BeaconList extends React.Component {
     const beacons = sortedBeacons.slice(pageIndex, last);
 
     return (
-      <div>
+      <div className={container}>
         <header className={header}>
           <h2 className={title} >My phyIDs</h2>
           <TextInput className={search} />

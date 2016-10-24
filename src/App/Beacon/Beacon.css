@@ -5,21 +5,18 @@
   align-items: flex-start;
   margin: 0 20px;
   padding: 20px 0px;
-  border-top: 1px solid rgb(195,192,180);
-  border-bottom: 1px solid rgb(195,192,180);
 }
 
 .title{
   color: rgb(0,171,223);
-  margin-right: 20px;
   margin-bottom: 20px;
+  min-width: 90px;
 }
 
 .content{
   display: flex;
   flex-direction: column;
-  flex: 1 0 80%;
-  /*margin-left: auto;*/
+  flex: 1;
 }
 
 @media (min-width: 641px) {
