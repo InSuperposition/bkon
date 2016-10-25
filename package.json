@@ -97,11 +97,9 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "lodash.kebabcase": "^4.0.1",
     "lodash.merge": "^4.6.0",
     "lodash.range": "^3.2.0",
     "lodash.sortby": "^4.7.0",
-    "lodash.take": "^4.1.1",
     "normalize.css": "^5.0.0",
     "normalizr": "^2.2.1",
     "react": "^15.3.2",
