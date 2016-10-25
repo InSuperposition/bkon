@@ -43,11 +43,8 @@ class BeaconList extends React.Component {
   componentDidMount() {
     const { token } = this.props;
     getJson('api/v2/beacons',{
-      method: 'GET',
       headers: {
         Authorization: `BEARER ${token}`,
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
       },
     },(response) => {
       // FIXME: normalizing the data here is a quick and dirty approach
@@ -73,19 +70,38 @@ class BeaconList extends React.Component {
     });
   }
 
-  // TODO: Debounce toggle if setting state on server to limit network requests
-  handleToggle = (beaconId) => () => {
-    // Mocking this behavior, not setting server side state
+  updateBeaconState = (beaconId, { disabled }) => {
     const beaconState = this.state.beaconEntities;
-    const isDisabled = beaconState.entities.beacons[beaconId].disabled;
     // deep merge
     const beaconEntities = merge(
       {}, beaconState,
-      { entities: { beacons: { [beaconId]: { disabled: !isDisabled } } } }
+      { entities: { beacons: { [beaconId]: { disabled } } } }
     );
+    // Optimistic update of toggle position animation
     this.setState({
       beaconEntities,
     });
+  }
+
+  update = (beaconId, { disabled }) => {
+    const { token } = this.props;
+    getJson(`api/v2/beacons/${beaconId}`,{
+      method: 'PUT',
+      headers: {
+        Authorization: `BEARER ${token}`,
+      },
+      body: JSON.stringify({ disabled }),
+    },
+    (response) => this.updateBeaconState(response._id, { disabled: response.disabled })
+  );
+  }
+
+  // TODO: Debounce toggle if setting state on server to limit network requests
+  handleToggle = (beaconId, { disabled }) => () => {
+    this.updateBeaconState(beaconId, { disabled: !disabled });
+
+    // attempts to update endpoint
+    this.update(beaconId, { disabled: !disabled });
   }
 
   handleSelect = (beaconId) => () => {
@@ -182,7 +198,7 @@ class BeaconList extends React.Component {
                 {...beacon}
                 isSelected={selectedBeacons[beacon._id]}
                 onSelect={this.handleSelect(beacon._id)}
-                onToggle={this.handleToggle(beacon._id)}
+                onToggle={this.handleToggle(beacon._id, { disabled: beacon.disabled })}
               />
             </li>
           ))
