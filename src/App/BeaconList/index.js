@@ -157,7 +157,7 @@ class BeaconList extends React.Component {
     const last = pageIndex + pageSize;
     const beacons = sortedBeacons.slice(pageIndex, last);
     const pages = range(1, Math.ceil(result.length / pageSize) + 1);
-
+    const currentPage = Math.floor(pageIndex / pageSize) + 1;
     return (
       <div className={container}>
         <header className={header}>
@@ -169,7 +169,12 @@ class BeaconList extends React.Component {
             <Checkbox isActive id={'mock'} onChange={() => {}} />
           </div>
         </header>
-        <Pagination onPaginate={this.paginate} onGoto={this.gotoPage} pages={pages} />
+        <Pagination
+          onPaginate={this.paginate}
+          onGoto={this.gotoPage}
+          pages={pages}
+          currentPage={currentPage}
+        />
         <ul className={list} >{
           beacons.map((beacon) => (
             <li key={beacon._id} className={item} >
