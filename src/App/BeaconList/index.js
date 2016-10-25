@@ -32,6 +32,8 @@ class BeaconList extends React.Component {
       // pagination state
       pageSize: 8,
       pageIndex: 0,
+      // selected
+      selectedBeacons: {},
     };
   }
 
@@ -46,24 +48,34 @@ class BeaconList extends React.Component {
       },
     },(response) => {
       // FIXME: normalizing the data here is a quick and dirty approach
-      // Using Immutable data structures can give some advantages here.
+      // Using immutable data structures can give some advantages here.
+      // - prevent undefined errors
+      // - memoizes lookups
       const beaconSchema = new Schema('beacons', {
         idAttribute: '_id',
+        // NOTE: MOCK. Sets beacon's checkbox to false by default
         defaults: { isSelected: false },
       });
       const beaconEntities = normalize(response, arrayOf(beaconSchema));
+      // set selected list to false, this list used for UI updates
+      const selectedBeacons = beaconEntities.result.reduce(
+        (prev, name) => (Object.assign({}, prev, { [name]: false })),
+        {}
+      );
+
       this.setState({
         beaconEntities,
+        selectedBeacons,
       });
     });
   }
 
-  handleToggle = () => {
-
+  handleToggle = (e) => {
+    console.dir(e.target);
   }
 
-  handleSelect = () => {
-
+  handleSelect = (e) => {
+    console.dir(e.target);
   }
 
   paginate = (forward = true) => {

@@ -3,10 +3,14 @@ import { container, controls, title, content, details, url, battery } from './Be
 import Toggle from '../../modules/Inputs/Toggle';
 import Checkbox from '../../modules/Inputs/Checkbox';
 
-const Beacon = ({ disabled, name, redirectUrl, _id, batteryLevel, onSelect, onToggle }) => (
+const Beacon = ({
+  disabled, name, redirectUrl,
+  _id, batteryLevel, isSelected,
+  onSelect, onToggle,
+}) => (
   <div className={container} >
     <div className={controls} >
-      <Checkbox name={'test'} onClick={onSelect} />
+      <Checkbox isActive={isSelected} name={name} onChange={onSelect} />
       <Toggle isActive={!disabled} onClick={onToggle} />
       <h2 className={title}>{_id}</h2>
     </div>
@@ -24,6 +28,7 @@ Beacon.propTypes = {
   disabled: React.PropTypes.bool,
   name: React.PropTypes.string,
   redirectUrl: React.PropTypes.string,
+  isSelected: React.PropTypes.bool,
   onSelect: React.PropTypes.func,
   onToggle: React.PropTypes.func,
 };

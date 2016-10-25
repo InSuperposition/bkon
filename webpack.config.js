@@ -252,6 +252,7 @@ const getConfig = (env) => {
       // to fix issues with images, fonts, etc.
       publicPath: '/',
       filename: env === Environments.PROD ? '[name].[chunkhash].js' : 'bundle.js',
+      libraryTarget: 'umd',
     },
     plugins: getPlugins(env),
     module: {
