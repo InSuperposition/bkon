@@ -1,4 +1,5 @@
 import React from 'react';
+import merge from 'lodash.merge';
 import { normalize, Schema, arrayOf } from 'normalizr';
 import sortBy from 'lodash.sortby';
 import { getJson } from '../../modules/callApi';
@@ -70,12 +71,21 @@ class BeaconList extends React.Component {
     });
   }
 
-  handleToggle = (e) => {
-    console.dir(name,e.target);
+  // TODO: Debounce toggle if setting state on server to limit network requests
+  handleToggle = (beaconId) => () => {
+    // Mocking this behavior, not setting server side state
+    const beaconState = this.state.beaconEntities;
+    const isDisabled = beaconState.entities.beacons[beaconId].disabled;
+    const beaconEntities = merge(
+      {}, beaconState,
+      { entities: { beacons: { [beaconId]: { disabled: !isDisabled } } } }
+    );
+    this.setState({
+      beaconEntities,
+    });
   }
 
   handleSelect = (beaconId) => () => {
-    console.log(beaconId, this);
     const beaconList = this.state.selectedBeacons;
     const beaconState = this.state.selectedBeacons[beaconId];
     const selectedBeacons = Object.assign({}, beaconList, { [beaconId]: !beaconState });
@@ -153,7 +163,7 @@ class BeaconList extends React.Component {
                 {...beacon}
                 isSelected={selectedBeacons[beacon._id]}
                 onSelect={this.handleSelect(beacon._id)}
-                onToggle={this.handleToggle}
+                onToggle={this.handleToggle(beacon._id)}
               />
             </li>
           ))
