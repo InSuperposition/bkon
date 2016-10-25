@@ -2,6 +2,7 @@ import React from 'react';
 import { container, controls, title, content, details, url, battery } from './Beacon.css';
 import Toggle from '../../modules/Inputs/Toggle';
 import Checkbox from '../../modules/Inputs/Checkbox';
+import BatteryIcon from '../BatteryIcon';
 
 const Beacon = ({
   disabled, name, redirectUrl,
@@ -18,7 +19,9 @@ const Beacon = ({
       <span className={details}>{name}</span>
       <span className={url}>{redirectUrl}</span>
     </div>
-    <div className={battery}>{batteryLevel}</div>
+    <div className={battery}>
+      <BatteryIcon level={batteryLevel} />
+    </div>
   </div>
 );
 

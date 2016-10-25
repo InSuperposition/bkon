@@ -37,6 +37,7 @@
 .battery{
   position: absolute;
   right: 10px;
+  width: 10px;
 }
 
 .url{
