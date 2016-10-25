@@ -1,9 +1,13 @@
 import React from 'react';
 import cn from 'classnames';
-import { container } from './TextInput.css';
+import { container, icon, input } from './TextInput.css';
+import Search from '../../../assets/svgs/search.svg';
 
 const TextInput = ({ className }) => (
-  <input type="text" className={cn(container, className)} placeholder="Search" />
+  <div className={cn(container, className)}>
+    <Search className={icon} />
+    <input type="text" className={input} placeholder="Search" />
+  </div>
 );
 
 TextInput.propTypes = {

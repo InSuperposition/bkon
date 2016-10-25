@@ -1,9 +1,21 @@
 .container{
-  color: rgb(172,173,174);
-  border: 1px solid;
-  padding: 10px 20px;
+  position: relative;
 }
 
-.container::placeholder{
+.icon{
+  position: absolute;
+  top: 9px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.input{
+  color: rgb(172,173,174);
+  border: 1px solid;
+  padding: 10px 25px;
+}
+
+.input::placeholder{
   color: rgb(172,173,174);
 }
