@@ -71,11 +71,17 @@ class BeaconList extends React.Component {
   }
 
   handleToggle = (e) => {
-    console.dir(e.target);
+    console.dir(name,e.target);
   }
 
-  handleSelect = (e) => {
-    console.dir(e.target);
+  handleSelect = (beaconId) => () => {
+    console.log(beaconId, this);
+    const beaconList = this.state.selectedBeacons;
+    const beaconState = this.state.selectedBeacons[beaconId];
+    const selectedBeacons = Object.assign({}, beaconList, { [beaconId]: !beaconState });
+    this.setState({
+      selectedBeacons,
+    });
   }
 
   paginate = (forward = true) => {
@@ -120,6 +126,7 @@ class BeaconList extends React.Component {
       pageSize, pageIndex,
       options, defaultOption,
       beaconEntities: { entities },
+      selectedBeacons,
     } = this.state;
     const value = options[defaultOption];
     // sort
@@ -141,7 +148,12 @@ class BeaconList extends React.Component {
         <ul className={list} >{
           beacons.map((beacon) => (
             <li key={beacon._id} className={item} >
-              <Beacon {...beacon} onSelect={this.handleSelect} onToggle={this.handleToggle} />
+              <Beacon
+                {...beacon}
+                isSelected={selectedBeacons[beacon._id]}
+                onSelect={this.handleSelect(beacon._id)}
+                onToggle={this.handleToggle}
+              />
             </li>
           ))
         }</ul>

@@ -10,7 +10,7 @@ const Beacon = ({
 }) => (
   <div className={container} >
     <div className={controls} >
-      <Checkbox isActive={isSelected} name={name} onChange={onSelect} />
+      <Checkbox isActive={isSelected} id={_id} onChange={onSelect} />
       <Toggle isActive={!disabled} onClick={onToggle} />
       <h2 className={title}>{_id}</h2>
     </div>
