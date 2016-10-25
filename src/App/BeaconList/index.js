@@ -1,10 +1,12 @@
 import React from 'react';
 import merge from 'lodash.merge';
+import range from 'lodash.range';
 import { normalize, Schema, arrayOf } from 'normalizr';
 import sortBy from 'lodash.sortby';
 import { getJson } from '../../modules/callApi';
 import { container, header, search, title, inputs, list, item } from './BeaconList.css';
 import Beacon from '../Beacon';
+import Pagination from '../Pagination';
 import Droplist from '../../modules/Inputs/Droplist';
 import TextInput from '../../modules/Inputs/TextInput';
 import Checkbox from '../../modules/Inputs/Checkbox';
@@ -76,6 +78,7 @@ class BeaconList extends React.Component {
     // Mocking this behavior, not setting server side state
     const beaconState = this.state.beaconEntities;
     const isDisabled = beaconState.entities.beacons[beaconId].disabled;
+    // deep merge
     const beaconEntities = merge(
       {}, beaconState,
       { entities: { beacons: { [beaconId]: { disabled: !isDisabled } } } }
@@ -94,7 +97,16 @@ class BeaconList extends React.Component {
     });
   }
 
-  paginate = (forward = true) => {
+  gotoPage = (page) => () => {
+    const {
+      pageSize,
+    } = this.state;
+    this.setState({
+      pageIndex: (page - 1) * pageSize,
+    });
+  }
+
+  paginate = (forward = true) => () => {
     const {
       pageIndex,
       pageSize,
@@ -135,7 +147,7 @@ class BeaconList extends React.Component {
     const {
       pageSize, pageIndex,
       options, defaultOption,
-      beaconEntities: { entities },
+      beaconEntities: { entities, result },
       selectedBeacons,
     } = this.state;
     const value = options[defaultOption];
@@ -144,6 +156,7 @@ class BeaconList extends React.Component {
     // paginate
     const last = pageIndex + pageSize;
     const beacons = sortedBeacons.slice(pageIndex, last);
+    const pages = range(1, Math.ceil(result.length / pageSize) + 1);
 
     return (
       <div className={container}>
@@ -156,6 +169,7 @@ class BeaconList extends React.Component {
             <Checkbox isActive id={'mock'} onChange={() => {}} />
           </div>
         </header>
+        <Pagination onPaginate={this.paginate} onGoto={this.gotoPage} pages={pages} />
         <ul className={list} >{
           beacons.map((beacon) => (
             <li key={beacon._id} className={item} >
