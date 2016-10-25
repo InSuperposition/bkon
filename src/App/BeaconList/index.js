@@ -142,7 +142,8 @@ class BeaconList extends React.Component {
           <TextInput className={search} />
           <div className={inputs}>
             <Droplist options={options} value={value} onChange={this.handleChange} />
-            <Checkbox />
+            {/* Did not implement state change, no behavior */}
+            <Checkbox isActive id={'mock'} onChange={() => {}} />
           </div>
         </header>
         <ul className={list} >{
