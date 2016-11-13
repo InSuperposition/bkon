@@ -6,6 +6,7 @@
   position: relative;
   margin-left: 20px;
   margin-right: 10px;
+  font-size: 0.85em;
 }
 
 .active .on{
@@ -19,13 +20,13 @@
 }
 
 .on{
-  color: rgb(195,192,180);
+  color: #B8B8B8;
   margin-left: auto;
   margin-right: 6px;
 }
 
 .off{
-  color: rgb(195,192,180);
+  color: #B8B8B8;
   margin-right: auto;
 }
 
@@ -35,7 +36,7 @@
   width: 36px;
   height: 12.5px;
   border-radius: 50px;
-  border: 1px solid rgb(195,192,180);
+  border: 1px solid #B8B8B8;
 }
 
 .button {
@@ -47,6 +48,6 @@
   width: 20px;
   height: 20px;
   border-radius: 50px;
-  border: 1px solid rgb(195,192,180);
+  border: 1px solid #B8B8B8;
   background-color: rgb(255,255,255);
 }

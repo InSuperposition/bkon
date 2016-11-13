@@ -9,22 +9,22 @@
 }
 
 .container :global .Dropdown-arrow{
-  border-color: #c3c0b4 transparent transparent;
+  border-color: #E6E5E0 transparent transparent;
   top: 13px;
   border-width: 8px 5px 0;
 }
 
 .container :global .Dropdown-placeholder {
-  color: #c3c0b4;
+  color: #B8B8B8;
   font-weight: 900;
 }
 
 .container :global .Dropdown-menu{
-  border-color: #c3c0b4;
+  border-color: #E6E5E0;
 }
 
 .container :global .Dropdown-menu .Dropdown-option{
-  color: #c3c0b4;
+  color: #E6E5E0;
 }
 
 .container :global .Dropdown-menu .Dropdown-option.is-selected{

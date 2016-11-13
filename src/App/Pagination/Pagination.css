@@ -4,7 +4,7 @@
   width: 100%;
   align-items: center;
   justify-content: center;
-  padding: 0 15px;
+  padding: 0 10px;
 }
 
 .button{
@@ -13,7 +13,7 @@
   width: 20px;
   height: 20px;
   background-color: transparent;
-  border: 1px solid #c3c0b4;
+  border: 1px solid #E6E5E0;
   cursor: pointer;
   text-align: center;
 }

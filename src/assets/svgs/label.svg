@@ -5,7 +5,7 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="ICON-Label-View-Primary" fill="#E6E5E0">
+        <g id="ICON-Label-View-Primary" fill="#B8B8B8">
             <g id="icon-Label-View">
                 <path d="M3,6.25 C2.311,6.25 1.75,5.689 1.75,5 C1.75,4.31 2.311,3.75 3,3.75 C3.689,3.75 4.25,4.31 4.25,5 C4.25,5.689 3.689,6.25 3,6.25 L3,6.25 Z M0,2 L0,7.657 L7.071,14.727 L12.729,9.071 L5.657,2 L0,2 Z" id="Fill-1"></path>
                 <polygon id="Fill-3" points="6.6572 0.0005 1.0002 0.0005 1.0002 1.0005 5.3862 1.0005 5.8002 1.0005 13.0002 8.0005 13.7282 7.0715"></polygon>

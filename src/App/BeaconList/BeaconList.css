@@ -3,7 +3,7 @@
 }
 .header {
   font-size: 1.25em;
-  margin: 10px 15px;
+  margin: 10px 10px;
   display: flex;
   flex-direction: column;
 }
@@ -14,7 +14,6 @@
 }
 
 .search{
-    width: 250px;
     margin: auto;
 }
 
@@ -76,12 +75,12 @@
 }
 
 .list {
-  border-top: 1px solid rgb(195,192,180);
+  border-top: 1px solid #E6E5E0;
 
 }
 
 .item {
   display: block;
   list-style: none;
-  border-bottom: 1px solid rgb(195,192,180);
+  border-bottom: 1px solid #E6E5E0;
 }

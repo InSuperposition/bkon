@@ -16,7 +16,7 @@
 .option{
   position: absolute;
   bottom: -3px;
-  right: 35px;
+  right: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,7 +42,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px rgb(195,192,180) solid;
+  /*border: 1px #B8B8B8 solid;*/
   background-color: transparent;
 }
 

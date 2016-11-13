@@ -4,9 +4,9 @@
 
 .icon{
   position: absolute;
-  color: #c3c0b4;
+  color: #E6E5E0;
   fill: currentColor;
-  top: 11px;
+  top: 12px;
   left: 5px;
   width: 25px;
   height: 25px;
@@ -14,11 +14,12 @@
 
 .input{
   width: 100%;
-  color: #c3c0b4;
-  border: 1px solid #c3c0b4;
+  color: #E6E5E0;
+  border: 1px solid #E6E5E0;
   padding: 10px 30px;
+  font-size: 0.9em
 }
 
 .input::placeholder{
-  color: #c3c0b4;
+  color: #E6E5E0;
 }
