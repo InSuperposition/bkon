@@ -4,12 +4,13 @@ import range from 'lodash.range';
 import { normalize, Schema, arrayOf } from 'normalizr';
 import sortBy from 'lodash.sortby';
 import { getJson } from '../../modules/callApi';
-import { container, header, search, title, inputs, list, item } from './BeaconList.css';
+import { container, header, search, title, inputs, list, item, edit } from './BeaconList.css';
 import Beacon from '../Beacon';
 import Pagination from '../Pagination';
 import Droplist from '../../modules/Inputs/Droplist';
 import TextInput from '../../modules/Inputs/TextInput';
 import Checkbox from '../../modules/Inputs/Checkbox';
+import EditIcon from '../../assets/svgs/edit-button.svg';
 
 // BeaconList would be a container ( connected component ) if using Redux
 class BeaconList extends React.Component {
@@ -183,6 +184,7 @@ class BeaconList extends React.Component {
             <Droplist options={options} value={value} onChange={this.handleChange} />
             {/* Did not implement state change, no behavior */}
             <Checkbox isActive id={'mock'} onChange={() => {}} />
+            <EditIcon className={edit} />
           </div>
         </header>
         <Pagination

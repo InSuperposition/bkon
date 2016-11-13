@@ -15,20 +15,19 @@
 
 .controls{
   display: flex;
-  width: 225px;
   margin-bottom: 20px;
 }
 
 .title{
   color: rgb(0,171,223);
   font-family: "Roboto Bold";
+  width: 90px;
 }
 
 .content{
   display: flex;
   flex-direction: column;
   flex: 1;
-  margin-left: 10px;
 }
 
 

@@ -9,10 +9,11 @@
 
 .button{
   color: rgb(0,171,223);
-  width: 30px;
-  height: 24px;
+  font-size: 0.65em;
+  width: 20px;
+  height: 20px;
   background-color: transparent;
-  border: 1px solid rgb(172,173,174);
+  border: 1px solid #c3c0b4;
   cursor: pointer;
 }
 

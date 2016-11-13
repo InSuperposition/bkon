@@ -1,6 +1,7 @@
 import React from 'react';
 import { container, top, bottom, option, text, icon, action, avatar } from './Options.css';
 import Gear from '../../assets/svgs/gear-alt.svg';
+import image from '../../assets/images/avatar.png';
 
 const Options = () => (
   <section className={container} >
@@ -8,7 +9,7 @@ const Options = () => (
       <div className={option}>
         <span className={text}>Bright Eyed Baby Happy Face</span>
         <button className={action} >
-          <img src="https://placekitten.com/200/200" className={avatar} role="presentation" />
+          <img src={image} className={avatar} role="presentation" />
           <Gear className={icon} />
         </button>
       </div>

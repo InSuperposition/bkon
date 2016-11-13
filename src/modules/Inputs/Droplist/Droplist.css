@@ -1,6 +1,5 @@
 .container {
   width: 150px;
-  margin-left: 5px;
 }
 
 .container :global .Dropdown-control{
@@ -9,7 +8,9 @@
 }
 
 .container :global .Dropdown-arrow{
-
+  border-color: #c3c0b4 transparent transparent;
+  top: 18px;
+  border-width: 8px 5px 0;
 }
 
 .container :global .Dropdown-placeholder {

@@ -10,7 +10,6 @@
 
 .title{
   font-size: 1.5em;
-
   font-family: "Roboto Bold";
 }
 
@@ -22,6 +21,14 @@
 .search input {
   font-family: "Roboto Light";
   height: 50px;
+}
+
+.edit {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  right: -10px;
+  cursor: pointer
 }
 
 @media (min-width: 841px) {
@@ -48,11 +55,13 @@
 .inputs{
   display: flex;
   flex-direction: column;
+  position:relative;
+  height: 70px;
 }
 
-.inputs > *{
+/*.inputs > *{
   margin: 10px 0;
-}
+}*/
 
 @media (min-width: 641px) {
   .inputs {
@@ -61,8 +70,8 @@
     justify-content: flex-end;
   }
 
-  .inputs > *{
-    margin-right: 10px;
+  .inputs > button{
+    margin-right: 20px;
   }
 }
 
