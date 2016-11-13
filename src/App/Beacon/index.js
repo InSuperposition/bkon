@@ -1,5 +1,5 @@
 import React from 'react';
-import { container, controls, title, content, details, url, battery } from './Beacon.css';
+import { container, controls, title, content, details, url, battery, icon } from './Beacon.css';
 import Toggle from '../../modules/Inputs/Toggle';
 import Checkbox from '../../modules/Inputs/Checkbox';
 import BatteryIcon from '../BatteryIcon';
@@ -13,6 +13,7 @@ const Beacon = ({
     <div className={controls} >
       <Checkbox isActive={isSelected} id={_id} onChange={onSelect} />
       <Toggle isActive={!disabled} onClick={onToggle} />
+      <img className={icon} src={'./assets/svgs/beacons-gray.svg'} alt="beacon" />
       <h2 className={title}>{_id}</h2>
     </div>
     <div className={content}>

@@ -22,7 +22,7 @@
   color: rgb(0,171,223);
   font-family: "Roboto Bold";
   width: 80px;
-  margin-left: 20px;
+  margin-left: 15px;
 }
 
 .content{
@@ -31,11 +31,18 @@
   flex: 1;
 }
 
-
-
+.icon {
+  color: #B8B8B8;
+  fill: currentColor;
+  width: 15px;
+  height: 15px;
+  margin-left: 15px;
+  margin-top: 2.5px;
+}
 
 .details{
   font-family: "Roboto Bold";
+  margin-bottom: 5px;
 }
 
 .battery{

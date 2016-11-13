@@ -8,7 +8,7 @@ const groupList = [
   // First Group
   {
     id: 'Beacons',
-    iconName: 'beacons',
+    iconName: 'beacons-blue',
     items: [
       {
         id: 'Destinations',

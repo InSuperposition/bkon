@@ -79,6 +79,8 @@
 }
 
 .icon{
+  color: #0B9AD7;
+  fill: currentColor;
   width: 12.5px;
   margin-right: 15px;
   display: inline-block;
