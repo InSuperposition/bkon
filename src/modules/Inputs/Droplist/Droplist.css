@@ -1,6 +1,6 @@
 .container {
   min-width: 165px;
-  font-size: 0.85em;
+  font-size: 0.75em;
 }
 
 .container :global .Dropdown-control{
@@ -15,8 +15,7 @@
 }
 
 .container :global .Dropdown-placeholder {
-  color: #B8B8B8;
-  font-weight: 900;
+  color: #393939;
 }
 
 .container :global .Dropdown-menu{
@@ -25,6 +24,10 @@
 
 .container :global .Dropdown-menu .Dropdown-option{
   color: #E6E5E0;
+}
+
+.container :global .Dropdown-menu .Dropdown-option:hover{
+  color: #393939;
 }
 
 .container :global .Dropdown-menu .Dropdown-option.is-selected{
