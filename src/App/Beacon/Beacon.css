@@ -21,7 +21,8 @@
 .title{
   color: rgb(0,171,223);
   font-family: "Roboto Bold";
-  width: 90px;
+  width: 80px;
+  margin-left: 20px;
 }
 
 .content{
