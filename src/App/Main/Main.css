@@ -1,8 +1,10 @@
 .container {
+  background-color: #FFFFFF;
   flex: 0 0 calc(100% - 270px);
   z-index: 0;
   overflow-x: scroll;
-  /*max-width: calc(1200px - 270px);*/
+  /* use calc to be explicit about layout dimensions */
+  max-width: calc(1200px - 270px);
 }
 
 @media (max-width: 640px) {

@@ -8,12 +8,12 @@
 }
 
 .button{
-  cursor: pointer;
   color: rgb(0,171,223);
   width: 30px;
   height: 24px;
   background-color: transparent;
   border: 1px solid rgb(172,173,174);
+  cursor: pointer;
 }
 
 

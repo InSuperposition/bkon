@@ -1,5 +1,7 @@
 .container {
   position: relative;
+  width: 270px;
+  max-width: 270px;
 }
 
 .container.active {
@@ -9,8 +11,6 @@
 @media (max-width: 640px) {
   .container {
     position: fixed;
-    width: 270px;
-    max-width: 270px;
     height: 100%;
     z-index: 1;
     transform: translateX(-270px);
@@ -55,11 +55,11 @@
   }
 }
 
-
-
 .logo{
   width: 100%;
-  padding: 40px 75px 25px 40px;
+  height: 175px;
+  padding-left: 40px;
+  padding-right: 75px;
 }
 
 .active.group{
@@ -71,7 +71,6 @@
   border-left: none;
   padding-left: 6px;
 }
-
 
 .section{
   padding: 12.5px;

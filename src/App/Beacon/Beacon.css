@@ -21,6 +21,7 @@
 
 .title{
   color: rgb(0,171,223);
+  font-family: "Roboto Bold";
 }
 
 .content{
@@ -34,7 +35,7 @@
 
 
 .details{
-  font-weight: bold;
+  font-family: "Roboto Bold";
 }
 
 .battery{
@@ -48,4 +49,5 @@
 .url{
   flex: 1;
   word-break: break-word;
+  color: #c3c0b4;
 }
