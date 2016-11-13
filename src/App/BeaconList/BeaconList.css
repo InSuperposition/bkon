@@ -10,7 +10,7 @@
 
 .title{
   font-size: 1.5em;
-  margin-top: 65px;
+
   font-family: "Roboto Bold";
 }
 
@@ -24,10 +24,24 @@
   height: 50px;
 }
 
-@media (min-width: 641px) {
+@media (min-width: 841px) {
+  .title {
+    margin-top: 65px;
+  }
   .search {
     width: 320px;
     margin-right: 0;
+  }
+}
+
+@media (max-width: 840px) {
+  .title {
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+  .search {
+    width: 260px;
+    margin: auto;
   }
 }
 

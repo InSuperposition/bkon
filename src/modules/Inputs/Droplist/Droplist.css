@@ -1,5 +1,6 @@
 .container {
   width: 150px;
+  margin-left: 5px;
 }
 
 .container :global .Dropdown-control{
@@ -8,4 +9,10 @@
 }
 
 .container :global .Dropdown-arrow{
+
+}
+
+.container :global .Dropdown-placeholder {
+  color: #c3c0b4;
+  font-weight: 900;
 }
