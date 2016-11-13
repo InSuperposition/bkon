@@ -14,8 +14,8 @@ const Beacon = ({
       <Checkbox isActive={isSelected} id={_id} onChange={onSelect} />
       <Toggle isActive={!disabled} onClick={onToggle} />
       <img className={icon} src={'./assets/svgs/beacons-gray.svg'} alt="beacon" />
-      <h2 className={title}>{_id}</h2>
     </div>
+    <h2 className={title}>{_id}</h2>
     <div className={content}>
       <span className={details}>{name}</span>
       <span className={url}>{redirectUrl}</span>
