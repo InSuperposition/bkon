@@ -10,6 +10,7 @@
   .container {
     position: fixed;
     width: 270px;
+    max-width: 270px;
     height: 100%;
     z-index: 1;
     transform: translateX(-270px);
@@ -73,7 +74,7 @@
 
 
 .section{
-  padding: 10px 15px;
+  padding: 12.5px;
   display: block;
 }
 
@@ -88,7 +89,7 @@
 }
 
 .active.link{
-  padding-left: 18px;
+  padding-left: 23px;
   border-left: 7px rgb(255,255,255) solid;
   background-color: rgb(55,55,55);
 }
@@ -97,6 +98,6 @@
   composes: section;
   font-weight: 100;
   cursor: pointer;
-  padding-left: 25px;
+  padding-left: 30px;
   border-left: none;
 }

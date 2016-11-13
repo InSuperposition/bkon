@@ -1,6 +1,6 @@
 import React from 'react';
 import { container, top, bottom, option, text, icon, action, avatar } from './Options.css';
-import Gear from '../../assets/svgs/gear.svg';
+import Gear from '../../assets/svgs/gear-alt.svg';
 
 const Options = () => (
   <section className={container} >

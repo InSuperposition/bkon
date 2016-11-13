@@ -11,11 +11,12 @@
 }
 
 .input{
-  color: rgb(172,173,174);
+  width: 100%;
+  color: #c3c0b4;
   border: 1px solid;
   padding: 10px 25px;
 }
 
 .input::placeholder{
-  color: rgb(172,173,174);
+  color: #c3c0b4;
 }

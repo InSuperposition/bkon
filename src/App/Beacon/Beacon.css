@@ -3,13 +3,19 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  margin: 0 20px;
+  margin: 0 15px;
   padding: 20px 0px;
+}
+
+@media (max-width: 840px) {
+  .container {
+    flex-direction: column;
+  }
 }
 
 .controls{
   display: flex;
-  flex: 1;
+  width: 225px;
   margin-bottom: 20px;
 }
 
@@ -20,15 +26,12 @@
 .content{
   display: flex;
   flex-direction: column;
-  flex: 0 1 100%;
+  flex: 1;
+  margin-left: 10px;
 }
 
-@media (min-width: 820px) {
-  .content{
-    flex: 0 1 50%;
-    margin-left: auto;
-  }
-}
+
+
 
 .details{
   font-weight: bold;
@@ -36,8 +39,10 @@
 
 .battery{
   position: absolute;
+  top: 15px;
   right: 10px;
   width: 10px;
+  transform: rotate(90deg);
 }
 
 .url{

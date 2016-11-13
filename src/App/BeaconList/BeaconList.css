@@ -2,7 +2,7 @@
   margin: 0 20px;
 }
 .header {
-  margin: 10px 20px;
+  margin: 10px 15px;
   display: flex;
   flex-direction: column;
 }
@@ -13,13 +13,19 @@
 }
 
 .search{
+    width: 250px;
+    height: 50px;
+    margin: auto;
+}
 
+.search input {
+  font-family: Roboto;
 }
 
 @media (min-width: 641px) {
   .search {
-    width: 200px;
-    margin-left: auto;
+    width: 320px;
+    margin-right: 0;
   }
 }
 
