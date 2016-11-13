@@ -6,17 +6,17 @@
   position: absolute;
   color: #c3c0b4;
   fill: currentColor;
-  top: 14px;
+  top: 11px;
   left: 5px;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 
 .input{
   width: 100%;
   color: #c3c0b4;
   border: 1px solid #c3c0b4;
-  padding: 10px 25px;
+  padding: 10px 30px;
 }
 
 .input::placeholder{

@@ -1,5 +1,6 @@
 .container {
-  width: 150px;
+  min-width: 165px;
+  font-size: 0.85em;
 }
 
 .container :global .Dropdown-control{
@@ -9,11 +10,23 @@
 
 .container :global .Dropdown-arrow{
   border-color: #c3c0b4 transparent transparent;
-  top: 18px;
+  top: 13px;
   border-width: 8px 5px 0;
 }
 
 .container :global .Dropdown-placeholder {
   color: #c3c0b4;
   font-weight: 900;
+}
+
+.container :global .Dropdown-menu{
+  border-color: #c3c0b4;
+}
+
+.container :global .Dropdown-menu .Dropdown-option{
+  color: #c3c0b4;
+}
+
+.container :global .Dropdown-menu .Dropdown-option.is-selected{
+  color: #00abdf;
 }
